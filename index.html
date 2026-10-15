@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>玉石浮雕卡牌馆 · 金箔</title>
+<style>
+:root{--lacq:#121110;--lacq2:#0c0b0a;--gold:#d9a441;--verd:#63a69b;--paper:#efe9da;--mut:#8d8574}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:var(--lacq);color:var(--paper);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;display:flex;min-height:100vh}
+.rail{width:210px;flex-shrink:0;border-right:1px solid rgba(217,164,65,.22);display:flex;flex-direction:column;align-items:center;padding:48px 0;position:sticky;top:0;height:100vh}
+.vt{writing-mode:vertical-rl;font-size:30px;letter-spacing:14px;color:var(--gold);font-weight:600}
+.vs{writing-mode:vertical-rl;font-size:11px;letter-spacing:5px;color:var(--mut);margin-top:26px}
+.rnav{margin-top:auto;display:flex;flex-direction:column;gap:14px}
+.rnav a{color:var(--mut);text-decoration:none;font-size:13px;letter-spacing:4px;transition:color .2s}
+.rnav a:hover{color:var(--gold)}
+main{flex:1;min-width:0}
+.chap{padding:70px 0 10px 64px;position:relative;border-bottom:1px solid rgba(217,164,65,.14)}
+.ghost{position:absolute;top:34px;right:40px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:120px;color:transparent;-webkit-text-stroke:1px rgba(217,164,65,.28);line-height:1;user-select:none}
+.chap h2{font-size:34px;letter-spacing:14px;font-weight:600}
+.chap h2 small{font-size:12px;letter-spacing:4px;color:var(--verd);margin-left:16px;font-weight:400}
+.chap .count{margin-top:10px;font-size:12px;letter-spacing:3px;color:var(--mut)}
+.row{display:flex;gap:34px;overflow-x:auto;padding:36px 64px 60px 0;scroll-snap-type:x mandatory}
+.row::-webkit-scrollbar{height:4px}
+.row::-webkit-scrollbar-thumb{background:rgba(217,164,65,.4)}
+.kcard{flex:0 0 250px;scroll-snap-align:start;perspective:900px;cursor:pointer}
+.kcard .in{position:relative;aspect-ratio:3/4.4;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,.7,.3,1)}
+.kcard.flip .in{transform:rotateY(180deg)}
+.kf{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#000}
+.kf img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.kf.fr{transform:rotateY(180deg)}
+.kcap{margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(217,164,65,.25);padding-top:12px}
+.kcap .n{font-size:15px;letter-spacing:3px}
+.kcap .r{font-size:12px;letter-spacing:2px;color:var(--verd)}
+footer{padding:44px 64px;color:var(--mut);font-size:12px;letter-spacing:3px}
+@media(max-width:700px){.rail{display:none}.chap{padding-left:24px}.row{padding-right:24px}.kcard{flex-basis:200px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<aside class="rail">
+<div class="vt">玉石浮雕卡牌馆</div>
+<div class="vs">KINPAKU COLLECTION · 75</div>
+<nav class="rnav" id="rnav"></nav>
+</aside>
+<main id="main"></main>
+<script src="data.js"></script>
+<script>
+var main=document.getElementById('main'),rnav=document.getElementById('rnav');
+var themes=[];
+CARDS.forEach(function(c){
+  var t=themes.find(function(x){return x.name===c.theme;});
+  if(!t){t={cat:c.cat,name:c.theme,cards:[]};themes.push(t);}
+  t.cards.push(c);
+});
+rnav.innerHTML=['名著','漫画','游戏'].map(function(c){
+  return '<a href="#cat-'+c+'">'+c+'</a>';
+}).join('');
+var html='',lastCat='';
+themes.forEach(function(t,i){
+  if(t.cat!==lastCat){html+='<div id="cat-'+t.cat+'"></div>';lastCat=t.cat;}
+  html+='<section class="chap"><div class="ghost">'+String(i+1).padStart(2,'0')+'</div>'
+  +'<h2>'+t.name+'<small>'+t.cat+'</small></h2>'
+  +'<div class="count">'+t.cards.length+' 张 · 点击翻面</div>'
+  +'<div class="row">'
+  +t.cards.map(function(c){
+    return '<div class="kcard"><div class="in">'
+    +'<div class="kf"><img loading="lazy" src="'+BACK+'"></div>'
+    +'<div class="kf fr"><img loading="lazy" src="'+IMG+c.f+'.webp"></div>'
+    +'</div><div class="kcap"><span class="n">'+c.name+'</span><span class="r">'+c.rank+'</span></div></div>';
+  }).join('')+'</div></section>';
+});
+html+='<footer>NEO KINPAKU · 金箔与铜绿 ·  restraint in chrome, brilliance in texture</footer>';
+main.innerHTML=html;
+main.addEventListener('click',function(e){
+  var k=e.target.closest('.kcard');if(k)k.classList.toggle('flip');
+});
+</script>
+</body>
+</html>
