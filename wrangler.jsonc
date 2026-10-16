@@ -1,0 +1,1 @@
+{"$schema":"./node_modules/wrangler/config-schema.json","assets":{"directory":"."},"compatibility_date":"2026-10-16","name":"jade-kinpaku-cards","routes":[{"custom_domain":true,"pattern":"jade-kinpaku-cards.xiaosang.cc"}],"workers_dev":false}
