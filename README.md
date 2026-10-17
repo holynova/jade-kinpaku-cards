@@ -8,7 +8,7 @@ English: Standalone Kinpaku edition of the jade-relief card gallery — 108 card
 
 ## 在线体验 / Live Demo
 
-- [Cloudflare Demo](https://xiaosang.cc/jade-kinpaku-cards/)
+- [Cloudflare Demo](https://jade-kinpaku-cards.xiaosang.cc/)
 - [GitHub Repo](https://github.com/holynova/jade-kinpaku-cards)
 
 <img src="./assets/qr.png" width="180" alt="扫码访问 Cloudflare 在线体验">
@@ -27,6 +27,6 @@ npx --yes wrangler@4.128.0 deploy --dry-run --config wrangler.jsonc
 npx --yes wrangler@4.128.0 deploy --config wrangler.jsonc
 ```
 
-Cloudflare Workers · Domain: `xiaosang.cc` · Route: `/jade-kinpaku-cards/`
+Cloudflare Workers · Custom Domain: `jade-kinpaku-cards.xiaosang.cc`
 
 源码与部署配置使用同一个主分支（main）；在本地手动发布，不创建 Cloudflare 专用分支或 GitHub Action。GitHub Pages 保留作回退。
