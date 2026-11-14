@@ -3,54 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>玉石浮雕卡牌馆 · 金箔</title>
+<title>玉石浮雕卡牌馆 金箔版</title>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="e01c9f78-4607-4e60-b01c-77c8190b12b4"></script>
 <style>
-:root{--lacq:#121110;--lacq2:#0c0b0a;--gold:#d9a441;--verd:#63a69b;--paper:#efe9da;--mut:#8d8574}
+:root{--lacq:#121110;--lacq2:#0c0b0a;--gold:#d9a441;--paper:#efe9da;--mut:#8d8574}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{background:var(--lacq);color:var(--paper);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;display:flex;min-height:100vh}
 .rail{width:210px;flex-shrink:0;border-right:1px solid rgba(217,164,65,.22);display:flex;flex-direction:column;align-items:center;padding:48px 0;position:sticky;top:0;height:100vh}
-.vt{writing-mode:vertical-rl;font-size:30px;letter-spacing:14px;color:var(--gold);font-weight:600}
-.vs{writing-mode:vertical-rl;font-size:11px;letter-spacing:5px;color:var(--mut);margin-top:26px}
+.vt{writing-mode:vertical-rl;font-size:34px;letter-spacing:14px;color:var(--gold);font-weight:600}
+.vs{writing-mode:vertical-rl;font-size:12px;letter-spacing:5px;color:var(--mut);margin-top:26px}
 .rnav{margin-top:auto;display:flex;flex-direction:column;gap:14px}
-.rnav a{color:var(--mut);text-decoration:none;font-size:13px;letter-spacing:4px;transition:color .2s}
+.rnav a{color:var(--mut);text-decoration:none;font-size:14px;letter-spacing:4px;transition:color .2s}
 .rnav a:hover{color:var(--gold)}
 main{flex:1;min-width:0}
 .chap{padding:70px 0 10px 64px;position:relative;border-bottom:1px solid rgba(217,164,65,.14)}
 .ghost{position:absolute;top:34px;right:40px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:120px;color:transparent;-webkit-text-stroke:1px rgba(217,164,65,.28);line-height:1;user-select:none}
 .chap h2{font-size:34px;letter-spacing:14px;font-weight:600}
-.chap h2 small{font-size:12px;letter-spacing:4px;color:var(--verd);margin-left:16px;font-weight:400}
+.chap h2 small{font-size:12px;letter-spacing:4px;color:rgba(217,164,65,.8);margin-left:16px;font-weight:400}
 .chap .count{margin-top:10px;font-size:12px;letter-spacing:3px;color:var(--mut)}
 .row{display:flex;gap:34px;overflow-x:auto;padding:36px 64px 60px 0;scroll-snap-type:x mandatory}
 .row::-webkit-scrollbar{height:4px}
 .row::-webkit-scrollbar-thumb{background:rgba(217,164,65,.4)}
 .kcard{flex:0 0 250px;scroll-snap-align:start;perspective:900px;cursor:pointer}
+.kcard:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .kcard .in{position:relative;aspect-ratio:3/4.4;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,.7,.3,1)}
 .kcard.flip .in{transform:rotateY(180deg)}
 .kf{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#000}
 .kf img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
 .kf.fr{transform:rotateY(180deg)}
 .kcap{margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(217,164,65,.25);padding-top:12px}
-.kcap .n{font-size:15px;letter-spacing:3px}
-.kcap .r{font-size:12px;letter-spacing:2px;color:var(--verd)}
+.kcap .n{font-size:18px;letter-spacing:3px}
+.kcap .r{font-size:12px;letter-spacing:2px;color:rgba(217,164,65,.8)}
+[id^="cat-"]{scroll-margin-top:70px}
 footer{padding:44px 64px;color:var(--mut);font-size:12px;letter-spacing:3px}
 .mbar{display:none}
 @media(max-width:700px){
   body{flex-direction:column}
   .rail{display:none}
-  .mbar{display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:30;background:rgba(18,17,16,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:12px 16px;border-bottom:1px solid rgba(217,164,65,.22)}
-  .mtitle{font-size:16px;letter-spacing:6px;color:var(--gold);font-weight:600;white-space:nowrap}
+  .mbar{display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:30;background:#121110;padding:12px 16px;border-bottom:1px solid rgba(217,164,65,.22)}
+  .mtitle{font-size:18px;letter-spacing:6px;color:var(--gold);font-weight:600;white-space:nowrap}
   .mnav{display:flex;gap:16px;margin-left:auto;overflow-x:auto}
   .mnav a{color:var(--mut);text-decoration:none;font-size:12px;letter-spacing:2px;white-space:nowrap}
   .mnav a:active{color:var(--gold)}
   .chap{padding:32px 0 6px 18px}
   .ghost{font-size:64px;top:16px;right:14px}
-  .chap h2{font-size:23px;letter-spacing:8px}
+  .chap h2{font-size:18px;letter-spacing:8px}
   .chap h2 small{margin-left:10px}
   .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px;overflow:visible;padding:22px 18px 44px 0;scroll-snap-type:none}
   .kcard{flex:none;min-width:0}
-  .kcap .n{font-size:13px;letter-spacing:2px}
-  .kcap .r{font-size:11px}
+  .kcap .n{font-size:14px;letter-spacing:2px}
+  .kcap .r{font-size:12px}
   footer{padding:30px 18px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -59,7 +61,7 @@ footer{padding:44px 64px;color:var(--mut);font-size:12px;letter-spacing:3px}
 <body>
 <aside class="rail">
 <div class="vt">玉石浮雕卡牌馆</div>
-<div class="vs">KINPAKU COLLECTION · 75</div>
+<div class="vs">KINPAKU COLLECTION — 108</div>
 <nav class="rnav" id="rnav"></nav>
 </aside>
 <header class="mbar">
@@ -80,25 +82,29 @@ var cats=['名著','漫画','游戏','特别'];
 var navHTML=cats.map(function(c){return '<a href="#cat-'+c+'">'+c+'</a>';}).join('');
 rnav.innerHTML=navHTML;
 document.getElementById('mnav').innerHTML=navHTML;
-document.querySelector('.vs').textContent='KINPAKU COLLECTION · '+CARDS.length;
+document.querySelector('.vs').textContent='KINPAKU COLLECTION — '+CARDS.length;
 var html='',lastCat='';
 themes.forEach(function(t,i){
   if(t.cat!==lastCat){html+='<div id="cat-'+t.cat+'"></div>';lastCat=t.cat;}
   html+='<section class="chap"><div class="ghost">'+String(i+1).padStart(2,'0')+'</div>'
   +'<h2>'+t.name+'<small>'+t.cat+'</small></h2>'
-  +'<div class="count">'+t.cards.length+' 张 · 点击翻面</div>'
+  +'<div class="count">'+t.cards.length+' 张，点卡片翻面</div>'
   +'<div class="row">'
   +t.cards.map(function(c){
-    return '<div class="kcard"><div class="in">'
-    +'<div class="kf"><img loading="lazy" src="'+BACK+'"></div>'
-    +'<div class="kf fr"><img loading="lazy" src="'+IMG+c.f+'.webp"></div>'
+    return '<div class="kcard" tabindex="0" role="button" aria-label="'+c.name+'，'+c.rank+'，点按翻面"><div class="in">'
+    +'<div class="kf"><img loading="lazy" src="'+BACK+'" alt=""></div>'
+    +'<div class="kf fr"><img loading="lazy" src="'+IMG+c.f+'.webp" alt="'+c.name+'"></div>'
     +'</div><div class="kcap"><span class="n">'+c.name+'</span><span class="r">'+c.rank+'</span></div></div>';
   }).join('')+'</div></section>';
 });
-html+='<footer>NEO KINPAKU · 金箔与铜绿<br><a href="https://github.com/holynova/jade-kinpaku-cards" style="color:var(--gold);text-decoration:none">GitHub 源码</a></footer>';
+html+='<footer>NEO KINPAKU 金箔典藏<br><a href="https://github.com/holynova/jade-kinpaku-cards" style="color:var(--gold);text-decoration:none">GitHub 源码</a></footer>';
 main.innerHTML=html;
 main.addEventListener('click',function(e){
   var k=e.target.closest('.kcard');if(k)k.classList.toggle('flip');
+});
+main.addEventListener('keydown',function(e){
+  if(e.key!=='Enter'&&e.key!==' ')return;
+  var k=e.target.closest('.kcard');if(k){e.preventDefault();k.classList.toggle('flip');}
 });
 </script>
 </body>

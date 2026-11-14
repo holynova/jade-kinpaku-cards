@@ -8,8 +8,10 @@ English: Standalone Kinpaku edition of the jade-relief card gallery — 108 card
 
 ## 在线体验 / Live Demo
 
-- [Cloudflare Demo](https://jade-kinpaku-cards.xiaosang.cc/)
+- [在线体验（GitHub Pages）](https://holynova.github.io/jade-kinpaku-cards/)
 - [GitHub Repo](https://github.com/holynova/jade-kinpaku-cards)
+
+> 注：`jade-kinpaku-cards.xiaosang.cc` 自定义域名当前无法访问（2026-11-14 核实），待重新部署后恢复；现以 GitHub Pages 为可用线上地址。
 
 <img src="./assets/qr.png" width="180" alt="扫码访问 Cloudflare 在线体验">
 
