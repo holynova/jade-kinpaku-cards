@@ -1,25 +1,25 @@
+<p align="right"><a href="README.en.md">English</a></p>
+
 <p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="玉石浮雕卡牌馆 · 金箔版 Neo Kinpaku — 左侧竖排金字馆名，右侧两张玉石牌一正一背，中间是翻面箭头">
 </p>
 
 <p align="center">
-  <a href="https://holynova.github.io/jade-kinpaku-cards/">▶ 在线逛馆 Visit the Gallery</a>
+  <a href="https://holynova.github.io/jade-kinpaku-cards/">▶ 在线逛馆</a>
   ·
   <a href="https://github.com/holynova/jade-kinpaku-cards">GitHub 仓库</a>
 </p>
 
 玉石浮雕卡牌馆 · 金箔版是 108 张玉石浮雕扑克的独立单页版：Neo Kinpaku 风格——黑漆底、金箔浮雕、铜绿点缀。每张牌都以牌背示人，点一下才翻出正面；左侧竖排馆名、每章一个描金序号，像在展厅里一章一章逛过去。手机优先，纯静态单页。
 
-Jade Relief Cards · Kinpaku is a standalone single-page edition of the 108 jade-relief playing cards, in Neo Kinpaku style — black lacquer, gold-leaf relief, verdigris accents. Every card starts face-down; tap to flip it over. A vertical gold title rail and gilt chapter numbers make it feel like walking through a gallery, one chapter at a time. Mobile-first, pure static page.
-
-## 截图 / Screenshots
+## 截图
 
 <p align="center">
   <img src="./assets/readme/screenshot-desktop.jpg" width="600" alt="桌面端：左侧竖排馆名，西游记一章 5 张牌，前两张已翻出正面（大闹天宫、火焰山借扇），其余仍是牌背">
   <img src="./assets/readme/screenshot-mobile.jpg" width="220" alt="移动端：顶部横排导航，西游记一章两列排布，第一张已翻面">
 </p>
 
-## 收录 / Collection
+## 收录
 
 108 张卡，4 大类别，22 个主题，每个主题 5 张（王牌珍藏 3 张）：
 
@@ -32,14 +32,14 @@ Jade Relief Cards · Kinpaku is a standalone single-page edition of the 108 jade
 
 每张卡都有扑克牌面（如「大闹天宫 · 黑桃 K」）；卡背是统一的玉石山水浮雕圆章。
 
-## 体验 / Experience
+## 体验
 
 - **点卡翻面**：卡牌默认显示牌背，点击（或键盘 Enter / 空格）以 3D 翻转露出正面，再点翻回。
 - **章节式展陈**：按主题分 22 章，每章横向滚动一排 5 张，右上角有描金序号（01、02……）。
 - **竖排导航**：桌面端左侧竖排馆名 + 类别导航（名著 / 漫画 / 游戏 / 特别），一点直达；移动端收成顶部横条。
 - **懒加载**：图片 `loading="lazy"`，滑到哪加载到哪。
 
-## 与 jade-cards-lab 的区别 / How It Differs
+## 与 jade-cards-lab 的区别
 
 同是 108 张玉石卡，两个版本展陈方式不同：
 
@@ -50,7 +50,7 @@ Jade Relief Cards · Kinpaku is a standalone single-page edition of the 108 jade
 | 导航 | 左侧竖排馆名 | 顶部筛选条 |
 | 图片 | 引用 jade-relief-cards 的图 | 仓库自带全图 + 缩略图 |
 
-## 本地运行 / Run Locally
+## 本地运行
 
 零构建，纯静态页面，直接起一个静态服务器（需联网加载图片，图片托管在 jade-relief-cards 仓库的 GitHub Pages）：
 
@@ -59,7 +59,7 @@ python3 -m http.server 8000
 # 打开 http://localhost:8000
 ```
 
-## 技术 / Tech
+## 技术
 
 - 纯 HTML + CSS + JS 单页，零依赖、零构建；卡牌数据在 `data.js`（`CARDS` 数组，108 条）。
 - 翻面用 CSS `preserve-3d` + `rotateY(180deg)`，0.7s 缓动；卡片可键盘操作（`tabindex` + Enter / 空格）。
@@ -71,16 +71,6 @@ data.js         108 张卡的数据 + 图片地址（指向 jade-relief-cards）
 assets/screenshot.png   旧截图（仅牌背）
 ```
 
-## English
+## 说明
 
-**Jade Relief Cards · Kinpaku** is a standalone single-page gallery of 108 jade-relief playing cards in Neo Kinpaku style — black lacquer background, gold-leaf relief, verdigris accents.
-
-- **108 cards, 4 categories, 22 themes**: Classics (35), Comics (35), Games (35), plus 3 Special "Ace Collection" cards. Every card has a rank (e.g. Havoc in Heaven · King of Spades); the shared card back is a jade landscape medallion.
-- **Tap to flip**: cards start face-down; click (or Enter/Space) flips them in 3D to reveal the front. 22 themed chapters, each a horizontal row of 5 with a gilt chapter number (01, 02, …).
-- **Navigation**: vertical gold title rail with category links on desktop, collapsing to a top bar on mobile. Images lazy-load as you scroll.
-- **Run it**: `python3 -m http.server 8000` — no build step, no dependencies. Note: images are hosted in the `jade-relief-cards` repo's GitHub Pages, so local runs need internet.
-- **Tech**: single HTML file + `data.js` (108 entries). Flip via CSS `preserve-3d` + `rotateY(180deg)`.
-
-## 许可 / License
-
-仓库内暂无 LICENSE 文件；卡牌图案为 AI 生成的玉石浮雕风格艺术图，人物与故事取材自经典作品与流行文化，版权归各自权利人所有。
+卡牌图案为 AI 生成的玉石浮雕风格艺术图，人物与故事取材自经典作品与流行文化，版权归各自权利人所有。
